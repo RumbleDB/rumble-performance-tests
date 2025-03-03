@@ -7,12 +7,12 @@ import performance.TestCase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestRumbleSteps extends TestBase {
+public class TestRumbleImprovedSteps extends TestBase {
 
     @Test
     public void testPerformance() {
         List<TestCase> cases = new ArrayList<>();
-        for (String configName : List.of("rumble")) {
+        for (String configName : List.of("rumble_improved")) {
             for (TestCase testCase : StepsTestCases.allRumbleCases) {
                 testCase = testCase.copy();
                 testCase.setConfigName(configName);

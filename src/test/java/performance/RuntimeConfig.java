@@ -24,21 +24,16 @@ public class RuntimeConfig {
             "rumble",
             new RuntimeConfig(
                     true,
-                    List.of("--optimize-steps", "no", "--optimize-parent-pointers", "no", "--optimize-instanceof", "no")
+                    Collections.emptyList()
+                    // List.of("--optimize-steps", "no", "--optimize-parent-pointers", "no", "--optimize-instanceof",
+                    // "no")
             )
         );
         configs.put(
             "rumble_improved",
             new RuntimeConfig(
                     true,
-                    List.of(
-                        "--optimize-steps",
-                        "yes",
-                        "--optimize-parent-pointers",
-                        "yes",
-                        "--optimize-instanceof",
-                        "yes"
-                    )
+                    Collections.emptyList()
             )
         );
     }
