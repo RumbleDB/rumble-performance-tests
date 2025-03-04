@@ -8,8 +8,8 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class TestBase {
-    public void runTest(List<TestCase> testCases) {
-        String currTime = java.time.LocalDateTime.now().toString();
+    public void runTest(List<TestCase> testCases, String testName) {
+        String outputName = java.time.LocalDateTime.now() + "_" + testName;
         for (int rep = 1; rep <= Config.reps; rep++) {
             for (TestCase test : testCases) {
                 long estimatedInitTime = testInitTime(test.queries.get(0), test.configName);
@@ -29,7 +29,7 @@ public class TestBase {
                                 String.valueOf(rep),
                                 String.valueOf(queryIndex),
                                 String.valueOf(estimatedInitTime),
-                                currTime,
+                                outputName,
                                 Paths.get("").toUri().toString()
                         );
                         processBuilder.inheritIO();

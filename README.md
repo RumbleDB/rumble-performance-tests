@@ -13,6 +13,7 @@ chmod +x ./copy_files_sbb.sh
 
 chmod +x ./copy_files_protocols.sh
 ./copy_files_protocols.sh
+cd ..
 ````
 
 ## Run performance tests

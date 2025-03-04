@@ -35,7 +35,6 @@ public class ExecutionTimer {
         JSONObject queryResults = new JSONObject();
         queryResults.put("testName", testName);
         queryResults.put("configName", runtimeConfig);
-        queryResults.put("machine", Config.machineName);
         queryResults.put("query", query);
         queryResults.put("runtime", result);
         queryResults.put("run", rep);

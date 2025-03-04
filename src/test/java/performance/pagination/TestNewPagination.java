@@ -17,6 +17,6 @@ public class TestNewPagination extends TestBase {
             testCase.setConfigName("new_master");
             cases.add(testCase);
         }
-        runTest(cases);
+        runTest(cases, "paginationnew");
     }
 }

@@ -17,6 +17,6 @@ public class TestOldPagination extends TestBase {
             testCase.setConfigName("old_master");
             cases.add(testCase);
         }
-        runTest(cases);
+        runTest(cases, "paginationold");
     }
 }
