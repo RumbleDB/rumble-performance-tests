@@ -24,9 +24,9 @@ public class ExecutionTimer {
 
         try {
             if (RuntimeConfig.lookup(runtimeConfig).useRumble) {
-                result = Helper.timeQueryRumble(query, runtimeConfig);
+                result = Helper.timeQueryRumble(query, null, runtimeConfig);
             } else {
-                result = Helper.timeQuerySaxon(query, baseUri);
+                result = Helper.timeQuerySaxon(query, null, baseUri);
             }
         } catch (Error e) {
             result = -1;

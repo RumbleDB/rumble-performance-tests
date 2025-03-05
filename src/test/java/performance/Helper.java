@@ -29,13 +29,13 @@ public class Helper {
         );
     }
 
-    public static long timeQueryRumble(String query, String runtimeConfig) {
-        return timeQueryRumble(query, getRumble(runtimeConfig));
-    }
 
-    public static long timeQueryRumble(String query, Rumble rumble) {
+    public static long timeQueryRumble(String query, Rumble rumble, String runtimeConfig) {
         try {
             long startTime = System.currentTimeMillis();
+            if (rumble == null) {
+                rumble = getRumble(runtimeConfig);
+            }
             List<Item> items = new ArrayList<>();
             System.out.println("Testing: " + query);
             SequenceOfItems result = rumble.runQuery(query);
@@ -45,8 +45,8 @@ public class Helper {
                 JavaRDD<Item> rdd = result.getAsRDD();
                 SparkSessionManager.collectRDDwithLimitWarningOnly(rdd, items);
             }
-            long totalTime = System.currentTimeMillis() - startTime;
             System.out.println("Result is" + items.stream().map(Item::serialize).collect(Collectors.toList()));
+            long totalTime = System.currentTimeMillis() - startTime;
             return totalTime;
         } catch (OutOfMemoryError | Exception e) {
             System.out.println(e);
@@ -65,12 +65,12 @@ public class Helper {
         return xqc;
     }
 
-    public static long timeQuerySaxon(String query, String baseUri) {
-        return timeQuerySaxon(query, getSaxon(baseUri));
-    }
 
-    public static long timeQuerySaxon(String query, XQueryCompiler xqc) {
+    public static long timeQuerySaxon(String query, XQueryCompiler xqc, String baseUri) {
         long startTime = System.currentTimeMillis();
+        if (xqc == null) {
+            xqc = getSaxon(baseUri);
+        }
         List<XdmItem> items = new ArrayList<>();
         XdmDestination destination = new XdmDestination();
         try {
@@ -82,8 +82,8 @@ public class Helper {
         for (XdmItem item : result) {
             items.add(item);
         }
-        long totalTime = System.currentTimeMillis() - startTime;
         System.out.println("Result is" + items.stream().map(XdmItem::getStringValue).collect(Collectors.toList()));
+        long totalTime = System.currentTimeMillis() - startTime;
         return totalTime;
     }
 }

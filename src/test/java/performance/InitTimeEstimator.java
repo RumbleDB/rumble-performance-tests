@@ -14,13 +14,13 @@ public class InitTimeEstimator {
         long timeDifference;
         if (RuntimeConfig.lookup(runtimeConfig).useRumble) {
             Rumble rumble = Helper.getRumble(runtimeConfig);
-            long time1 = Helper.timeQueryRumble(query, rumble);
-            long time2 = Helper.timeQueryRumble(query, rumble);
+            long time1 = Helper.timeQueryRumble(query, rumble, null);
+            long time2 = Helper.timeQueryRumble(query, rumble, null);
             timeDifference = time1 - time2;
         } else {
             XQueryCompiler xqc = Helper.getSaxon(baseUri);
-            long time1 = Helper.timeQuerySaxon(query, xqc);
-            long time2 = Helper.timeQuerySaxon(query, xqc);
+            long time1 = Helper.timeQuerySaxon(query, xqc, null);
+            long time2 = Helper.timeQuerySaxon(query, xqc, null);
             timeDifference = time1 - time2;
         }
         System.out.println("Result:" + timeDifference);

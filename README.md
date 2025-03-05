@@ -3,18 +3,20 @@ This repo contains the codes used for my (Marco Schöb) master thesis to create 
 
 # Steps to reproduce results
 ## Download and prepare data
-1. Download the csv [here](https://data.sbb.ch/explore/dataset/ist-daten-sbb/export/) and convert it to xml using excel. Place the resulting file inside a new folder called 'sbbxml1' inside the performance_test_data folder.
-2. Download [this](https://opendata.swiss/en/dataset/zurcher-stillstandsprotokolle-des-17-jahrhunderts) zip archive and rename it to 'protocols1k' and place it in the performance_test_data folder.
-3. multiply data (WARNING: THIS NEEDS ABOUT 40GB OF FREE STORAGE)
+1. Download [this](https://opendata.swiss/en/dataset/zurcher-stillstandsprotokolle-des-17-jahrhunderts) zip archive and rename it to 'protocols1k' and place it in the performance_test_data folder.
+2. Download the files specified in 'edgards_to_download.md' and place them into a 'edgar16' directory inside performance_test_data.
+2. multiply data
 ```
 cd performance_test_data
-chmod +x ./copy_files_sbb.sh
-./copy_files_sbb.sh
-
 chmod +x ./copy_files_protocols.sh
 ./copy_files_protocols.sh
 cd ..
+
+chmod +x ./copy_files_edgars.sh
+./copy_files_edgars.sh
+cd ..
 ````
+
 
 ## Run performance tests
 5. clone rumble
