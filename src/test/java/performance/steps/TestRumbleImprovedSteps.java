@@ -19,6 +19,6 @@ public class TestRumbleImprovedSteps extends TestBase {
                 cases.add(testCase);
             }
         }
-        runTest(cases, "stepsrumbleimproved");
+        runTest(cases, "stepsrumbleimproved", true);
     }
 }

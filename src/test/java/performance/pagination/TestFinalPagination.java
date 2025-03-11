@@ -7,16 +7,16 @@ import performance.TestCase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestOldPagination extends TestBase {
+public class TestFinalPagination extends TestBase {
 
     @Test
     public void testPerformance() {
         List<TestCase> cases = new ArrayList<>();
         for (TestCase testCase : PaginationTestCases.allTestCases) {
             testCase = testCase.copy();
-            testCase.setConfigName("old_master");
+            testCase.setConfigName("final_master");
             cases.add(testCase);
         }
-        runTest(cases, "paginationold", false);
+        runTest(cases, "paginationfinal", false);
     }
 }

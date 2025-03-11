@@ -20,6 +20,7 @@ public class RuntimeConfig {
         configs.put("saxon", new RuntimeConfig(false, Collections.emptyList()));
         configs.put("old_master", new RuntimeConfig(true, Collections.emptyList()));
         configs.put("new_master", new RuntimeConfig(true, Collections.emptyList()));
+        configs.put("final_master", new RuntimeConfig(true, Collections.emptyList()));
         configs.put(
             "rumble",
             new RuntimeConfig(

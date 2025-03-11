@@ -9,14 +9,11 @@ public class PaginationTestCases {
             "subsequence1",
             "old_master",
             List.of(
-                "subsequence(1 to 1000000000, 20*1000000-10, 10)",
-                "subsequence(1 to 1000000000, 40*1000000-10, 10)",
-                "subsequence(1 to 1000000000, 80*1000000-10, 10)",
-                "subsequence(1 to 1000000000, 160*1000000-10, 10)",
-                "subsequence(1 to 1000000000, 320*1000000-10, 10)",
-                "subsequence(1 to 1000000000, 640*1000000-10, 10)",
-                "subsequence(1 to 1000000000, 1280*1000000-10, 10)",
-                "subsequence(1 to 1000000000, 2560*1000000-10, 10)"
+                "subsequence(1 to 1000000020, 100000, 10)",
+                "subsequence(1 to 1000000020, 1000000, 10)",
+                "subsequence(1 to 1000000020, 10000000, 10)",
+                "subsequence(1 to 1000000020, 100000000, 10)",
+                "subsequence(1 to 1000000020, 1000000000, 10)"
             )
     );
 
@@ -24,14 +21,11 @@ public class PaginationTestCases {
             "sequencelookup1",
             "old_master",
             List.of(
-                "(1 to 1000000000)[4 * 1000000]",
-                "(1 to 1000000000)[8 * 1000000]",
-                "(1 to 1000000000)[16 * 1000000]",
-                "(1 to 1000000000)[32 * 1000000]",
-                "(1 to 1000000000)[64 * 1000000]",
-                "(1 to 1000000000)[128 * 1000000]",
-                "(1 to 1000000000)[256 * 1000000]",
-                "(1 to 1000000000)[512 * 1000000]"
+                "(1 to 1000000020)[100000]",
+                "(1 to 1000000020)[1000000]",
+                "(1 to 1000000020)[10000000]",
+                "(1 to 1000000020)[100000000]",
+                "(1 to 1000000020)[1000000000]"
             )
     );
 
@@ -39,11 +33,11 @@ public class PaginationTestCases {
             "subsequence2",
             "old_master",
             List.of(
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 1 * 1000, 10)",
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 2 * 1000, 10)",
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 4 * 1000, 10)",
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 8 * 1000, 10)",
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 16 * 1000, 10)"
+                "subsequence(parquet-file(\"performance_test_data/flights.parquet\"), 500, 10)",
+                "subsequence(parquet-file(\"performance_test_data/flights.parquet\"), 5000, 10)",
+                "subsequence(parquet-file(\"performance_test_data/flights.parquet\"), 50000, 10)",
+                "subsequence(parquet-file(\"performance_test_data/flights.parquet\"), 500000, 10)",
+                "subsequence(parquet-file(\"performance_test_data/flights.parquet\"), 5000000, 10)"
             )
     );
 
@@ -51,11 +45,11 @@ public class PaginationTestCases {
             "sequencelookup2",
             "old_master",
             List.of(
-                "parquet-file(\"performance_test_data/100062.parquet\")[1 * 1000]",
-                "parquet-file(\"performance_test_data/100062.parquet\")[2 * 1000]",
-                "parquet-file(\"performance_test_data/100062.parquet\")[4 * 1000]",
-                "parquet-file(\"performance_test_data/100062.parquet\")[8 * 1000]",
-                "parquet-file(\"performance_test_data/100062.parquet\")[16 * 1000]"
+                "parquet-file(\"performance_test_data/flights.parquet\")[500]",
+                "parquet-file(\"performance_test_data/flights.parquet\")[5000]",
+                "parquet-file(\"performance_test_data/flights.parquet\")[50000]",
+                "parquet-file(\"performance_test_data/flights.parquet\")[500000]",
+                "parquet-file(\"performance_test_data/flights.parquet\")[5000000]"
             )
     );
 

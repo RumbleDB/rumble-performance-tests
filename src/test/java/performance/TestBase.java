@@ -6,13 +6,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-    public void runTest(List<TestCase> testCases, String testName) {
+    public void runTest(List<TestCase> testCases, String testName, boolean measureInit) {
         String outputName = java.time.LocalDateTime.now() + "_" + testName;
         for (int rep = 1; rep <= Config.reps; rep++) {
             for (TestCase test : testCases) {
-                long estimatedInitTime = testInitTime(test.queries.get(0), test.configName);
+                long estimatedInitTime = measureInit ? testInitTime(test.queries.get(0), test.configName) : -1;
                 int queryIndex = 0;
                 for (String query : test.queries) {
                     queryIndex++;
@@ -42,7 +43,7 @@ public class TestBase {
                                 System.out.println(line);
                             }
                         }
-                        process.waitFor();
+                        process.waitFor(240, TimeUnit.SECONDS);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -73,7 +74,7 @@ public class TestBase {
                     }
                 }
             }
-            process.waitFor();
+            process.waitFor(240, TimeUnit.SECONDS);
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }

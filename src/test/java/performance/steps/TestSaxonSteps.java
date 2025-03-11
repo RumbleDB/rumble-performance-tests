@@ -17,6 +17,6 @@ public class TestSaxonSteps extends TestBase {
             testCase.setConfigName("saxon");
             cases.add(testCase);
         }
-        runTest(cases, "stepssaxon");
+        runTest(cases, "stepssaxon", true);
     }
 }

@@ -57,10 +57,10 @@ public class StepsTestCases {
             "steps_edgar1",
             "rumble",
             List.of(
-                "xml-files(\"../performance_test_data/edgar16/*.xml\")/xbrl/context/entity/identifier",
-                "xml-files(\"../performance_test_data/edgar64/*.xml\")/xbrl/context/entity/identifier",
-                "xml-files(\"../performance_test_data/edgar256/*.xml\")/xbrl/context/entity/identifier",
-                "xml-files(\"../performance_test_data/edgar1024/*.xml\")/xbrl/context/entity/identifier"
+                "xml-files(\"./performance_test_data/edgar16/*.xml\")/xbrl/context/entity/identifier",
+                "xml-files(\"./performance_test_data/edgar64/*.xml\")/xbrl/context/entity/identifier",
+                "xml-files(\"./performance_test_data/edgar256/*.xml\")/xbrl/context/entity/identifier",
+                "xml-files(\"./performance_test_data/edgar1024/*.xml\")/xbrl/context/entity/identifier"
 
             )
     );
@@ -75,8 +75,36 @@ public class StepsTestCases {
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./performance_test_data/edgar1024\")/xbrl/context/entity/identifier"
             )
     );
+
+    public static TestCase steps_edgar2r = new TestCase(
+            "steps_edgar2",
+            "rumble",
+            List.of(
+                "xml-files(\"./performance_test_data/edgar16/*.xml\")/descendant::segment",
+                "xml-files(\"./performance_test_data/edgar64/*.xml\")/descendant::segment",
+                "xml-files(\"./performance_test_data/edgar256/*.xml\")/descendant::segment",
+                "xml-files(\"./performance_test_data/edgar1024/*.xml\")/descendant::segment"
+
+            )
+    );
+
+    public static TestCase steps_edgar2s = new TestCase(
+            "steps_edgar2",
+            "saxon",
+            List.of(
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./performance_test_data/edgar16\")/descendant::segment",
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./performance_test_data/edgar64\")/descendant::segment",
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./performance_test_data/edgar256\")/descendant::segment",
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./performance_test_data/edgar1024\")/descendant::segment"
+            )
+    );
     public static List<TestCase> allRumbleCases = List.of(steps_edgar1r);
-    public static List<TestCase> allSaxonCases = List.of(steps_edgar1s);
+    public static List<TestCase> allSaxonCases = List.of(
+        steps_edgar2s,
+        steps_edgar1s,
+        steps_protocols_1s,
+        steps_protocols_2s
+    );
     // public static List<TestCase> allRumbleCases = List.of(steps_edgar1r, steps_protocols_1r, steps_protocols_2r);
     // public static List<TestCase> allSaxonCases = List.of(steps_edgar1s, steps_protocols_1s, steps_protocols_2s);
 }
