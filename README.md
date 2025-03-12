@@ -3,11 +3,11 @@ This repo contains the codes used for my (Marco Schöb) master thesis to create 
 
 # Steps to reproduce results
 ## Download and prepare data
-1. Download [this](https://opendata.swiss/en/dataset/zurcher-stillstandsprotokolle-des-17-jahrhunderts) zip archive and rename it to 'protocols1k' and place it in the performance_test_data folder.
-2. Download the files specified in 'edgards_to_download.md' and place them into a 'edgar16' directory inside performance_test_data.
+1. Download [this](https://opendata.swiss/en/dataset/zurcher-stillstandsprotokolle-des-17-jahrhunderts) zip archive and rename it to 'protocols1k' and place it in the data folder.
+2. Download the files specified in 'edgards_to_download.md' and place them into a 'edgar16' directory inside data.
 2. multiply data
 ```
-cd performance_test_data
+cd data
 chmod +x ./copy_files_protocols.sh
 ./copy_files_protocols.sh
 cd ..

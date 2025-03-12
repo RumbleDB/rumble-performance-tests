@@ -2,8 +2,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-performance_test_data/
-!performance_test_data/copy_files_edgar.sh
+data/*
+!data/*.sh
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

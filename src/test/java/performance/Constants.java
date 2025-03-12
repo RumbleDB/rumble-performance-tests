@@ -38,11 +38,11 @@ public class Constants {
             "subsequence2",
             "old_master",
             List.of(
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 1 * 1000, 10)",
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 2 * 1000, 10)",
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 4 * 1000, 10)",
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 8 * 1000, 10)",
-                "subsequence(parquet-file(\"performance_test_data/100062.parquet\"), 16 * 1000, 10)"
+                "subsequence(parquet-file(\"data/100062.parquet\"), 1 * 1000, 10)",
+                "subsequence(parquet-file(\"data/100062.parquet\"), 2 * 1000, 10)",
+                "subsequence(parquet-file(\"data/100062.parquet\"), 4 * 1000, 10)",
+                "subsequence(parquet-file(\"data/100062.parquet\"), 8 * 1000, 10)",
+                "subsequence(parquet-file(\"data/100062.parquet\"), 16 * 1000, 10)"
             )
     );
 
@@ -50,11 +50,11 @@ public class Constants {
             "sequencelookup2",
             "old_master",
             List.of(
-                "parquet-file(\"performance_test_data/100062.parquet\")[1 * 1000]",
-                "parquet-file(\"performance_test_data/100062.parquet\")[2 * 1000]",
-                "parquet-file(\"performance_test_data/100062.parquet\")[4 * 1000]",
-                "parquet-file(\"performance_test_data/100062.parquet\")[8 * 1000]",
-                "parquet-file(\"performance_test_data/100062.parquet\")[16 * 1000]"
+                "parquet-file(\"data/100062.parquet\")[1 * 1000]",
+                "parquet-file(\"data/100062.parquet\")[2 * 1000]",
+                "parquet-file(\"data/100062.parquet\")[4 * 1000]",
+                "parquet-file(\"data/100062.parquet\")[8 * 1000]",
+                "parquet-file(\"data/100062.parquet\")[16 * 1000]"
             )
     );
 
@@ -62,9 +62,9 @@ public class Constants {
             "steps1",
             "rumble",
             List.of(
-                "xml-files(\"./performance_test_data/protocols1k/*.xml\")/TEI/text/body/p[2]",
-                "xml-files(\"./performance_test_data/protocols2k/*.xml\")/TEI/text/body/p[2]",
-                "xml-files(\"./performance_test_data/protocols4k/*.xml\")/TEI/text/body/p[2]"
+                "xml-files(\"./data/protocols1k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols2k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols4k/*.xml\")/TEI/text/body/p[2]"
             )
     );
 
@@ -72,9 +72,9 @@ public class Constants {
             "steps1",
             "saxon",
             List.of(
-                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"performance_test_data/protocols1k\")/TEI/text/body/p[2]",
-                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"performance_test_data/protocols2k\")/TEI/text/body/p[2]",
-                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"performance_test_data/protocols4k\")/TEI/text/body/p[2]"
+                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols1k\")/TEI/text/body/p[2]",
+                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols2k\")/TEI/text/body/p[2]",
+                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols4k\")/TEI/text/body/p[2]"
             )
     );
 
@@ -82,9 +82,9 @@ public class Constants {
             "steps2",
             "rumble",
             List.of(
-                "xml-files(\"./performance_test_data/protocols1k/*.xml\")/descendant::date",
-                "xml-files(\"./performance_test_data/protocols2k/*.xml\")/descendant::date",
-                "xml-files(\"./performance_test_data/protocols4k/*.xml\")/descendant::date"
+                "xml-files(\"./data/protocols1k/*.xml\")/descendant::date",
+                "xml-files(\"./data/protocols2k/*.xml\")/descendant::date",
+                "xml-files(\"./data/protocols4k/*.xml\")/descendant::date"
 
             )
     );
@@ -93,9 +93,9 @@ public class Constants {
             "steps2",
             "saxon",
             List.of(
-                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"performance_test_data/protocols1k\")/descendant::date",
-                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"performance_test_data/protocols10k\")/descendant::date",
-                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"performance_test_data/protocols20k\")/descendant::date"
+                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols1k\")/descendant::date",
+                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols10k\")/descendant::date",
+                "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols20k\")/descendant::date"
             )
     );
 
