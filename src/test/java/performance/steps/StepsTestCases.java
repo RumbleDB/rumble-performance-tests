@@ -6,7 +6,6 @@ import java.util.List;
 public class StepsTestCases {
     public static TestCase steps_protocols_1r = new TestCase(
             "steps_protocols_1",
-            "rumble",
             List.of(
                 "xml-files(\"./data/protocols1k/*.xml\")/TEI/text/body/p[2]",
                 "xml-files(\"./data/protocols2k/*.xml\")/TEI/text/body/p[2]",
@@ -18,7 +17,6 @@ public class StepsTestCases {
 
     public static TestCase steps_protocols_1s = new TestCase(
             "steps_protocols_1",
-            "saxon",
             List.of(
                 "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols1k\")/TEI/text/body/p[2]",
                 "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols2k\")/TEI/text/body/p[2]",
@@ -30,7 +28,6 @@ public class StepsTestCases {
 
     public static TestCase steps_protocols_2r = new TestCase(
             "steps_protocols_2",
-            "rumble",
             List.of(
                 "xml-files(\"./data/protocols1k/*.xml\")/descendant::date",
                 "xml-files(\"./data/protocols2k/*.xml\")/descendant::date",
@@ -43,7 +40,6 @@ public class StepsTestCases {
 
     public static TestCase steps_protocols_2s = new TestCase(
             "steps_protocols_2",
-            "saxon",
             List.of(
                 "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols1k\")/descendant::date",
                 "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols2k\")/descendant::date",
@@ -55,7 +51,6 @@ public class StepsTestCases {
 
     public static TestCase steps_edgar1r = new TestCase(
             "steps_edgar1",
-            "rumble",
             List.of(
                 "xml-files(\"./data/edgar16/*.xml\")/xbrl/context/entity/identifier",
                 "xml-files(\"./data/edgar64/*.xml\")/xbrl/context/entity/identifier",
@@ -67,7 +62,6 @@ public class StepsTestCases {
 
     public static TestCase steps_edgar1s = new TestCase(
             "steps_edgar1",
-            "saxon",
             List.of(
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar16\")/xbrl/context/entity/identifier",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar64\")/xbrl/context/entity/identifier",
@@ -78,7 +72,6 @@ public class StepsTestCases {
 
     public static TestCase steps_edgar2r = new TestCase(
             "steps_edgar2",
-            "rumble",
             List.of(
                 "xml-files(\"./data/edgar16/*.xml\")/descendant::segment",
                 "xml-files(\"./data/edgar64/*.xml\")/descendant::segment",
@@ -90,7 +83,6 @@ public class StepsTestCases {
 
     public static TestCase steps_edgar2s = new TestCase(
             "steps_edgar2",
-            "saxon",
             List.of(
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar16\")/descendant::segment",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar64\")/descendant::segment",

@@ -6,7 +6,6 @@ public class Constants {
 
     public static TestCase subseq1 = new TestCase(
             "subsequence1",
-            "old_master",
             List.of(
                 "subsequence(1 to 1000000000, 20*1000000-10, 10)",
                 "subsequence(1 to 1000000000, 40*1000000-10, 10)",
@@ -21,7 +20,6 @@ public class Constants {
 
     public static TestCase seqlook1 = new TestCase(
             "sequencelookup1",
-            "old_master",
             List.of(
                 "(1 to 1000000000)[4 * 1000000]",
                 "(1 to 1000000000)[8 * 1000000]",
@@ -36,7 +34,6 @@ public class Constants {
 
     public static TestCase subseq2 = new TestCase(
             "subsequence2",
-            "old_master",
             List.of(
                 "subsequence(parquet-file(\"data/100062.parquet\"), 1 * 1000, 10)",
                 "subsequence(parquet-file(\"data/100062.parquet\"), 2 * 1000, 10)",
@@ -48,7 +45,6 @@ public class Constants {
 
     public static TestCase seqlook2 = new TestCase(
             "sequencelookup2",
-            "old_master",
             List.of(
                 "parquet-file(\"data/100062.parquet\")[1 * 1000]",
                 "parquet-file(\"data/100062.parquet\")[2 * 1000]",
@@ -60,7 +56,6 @@ public class Constants {
 
     public static TestCase steps1r = new TestCase(
             "steps1",
-            "rumble",
             List.of(
                 "xml-files(\"./data/protocols1k/*.xml\")/TEI/text/body/p[2]",
                 "xml-files(\"./data/protocols2k/*.xml\")/TEI/text/body/p[2]",
@@ -70,7 +65,6 @@ public class Constants {
 
     public static TestCase steps1s = new TestCase(
             "steps1",
-            "saxon",
             List.of(
                 "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols1k\")/TEI/text/body/p[2]",
                 "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols2k\")/TEI/text/body/p[2]",
@@ -80,7 +74,6 @@ public class Constants {
 
     public static TestCase steps2r = new TestCase(
             "steps2",
-            "rumble",
             List.of(
                 "xml-files(\"./data/protocols1k/*.xml\")/descendant::date",
                 "xml-files(\"./data/protocols2k/*.xml\")/descendant::date",
@@ -91,7 +84,6 @@ public class Constants {
 
     public static TestCase steps2s = new TestCase(
             "steps2",
-            "saxon",
             List.of(
                 "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols1k\")/descendant::date",
                 "declare default element namespace \"http://www.tei-c.org/ns/1.0\"; collection(\"data/protocols10k\")/descendant::date",

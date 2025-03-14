@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-    public void runTest(List<TestCase> testCases, String testName, boolean measureInit) {
+    public void runTest(List<TestCase> testCases, String configName, String testName, boolean measureInit) {
         String outputName = java.time.LocalDateTime.now() + "_" + testName;
         for (int rep = 1; rep <= Config.reps; rep++) {
             for (TestCase test : testCases) {
-                long estimatedInitTime = measureInit ? testInitTime(test.queries.get(0), test.configName) : -1;
+                long estimatedInitTime = measureInit ? testInitTime(test.queries.get(0), configName) : -1;
                 int queryIndex = 0;
                 for (String query : test.queries) {
                     queryIndex++;
@@ -25,7 +25,7 @@ public class TestBase {
                                 System.getProperty("java.class.path"),
                                 "performance.ExecutionTimer",
                                 test.testName,
-                                test.configName,
+                                configName,
                                 query,
                                 String.valueOf(rep),
                                 String.valueOf(queryIndex),
