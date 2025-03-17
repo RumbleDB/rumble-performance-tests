@@ -8,8 +8,7 @@ import org.rumbledb.api.SequenceOfItems;
 import org.rumbledb.config.RumbleRuntimeConfiguration;
 import sparksoniq.spark.SparkSessionManager;
 
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -54,22 +53,18 @@ public class Helper {
         }
     }
 
-    public static XQueryCompiler getSaxon(String baseUri) {
+    public static XQueryCompiler getSaxon() {
         Processor proc = new Processor(false);
         XQueryCompiler xqc = proc.newXQueryCompiler();
-        try {
-            xqc.setBaseURI(new URI(baseUri));
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
+        xqc.setBaseURI(Paths.get("").toUri());
         return xqc;
     }
 
 
-    public static long timeQuerySaxon(String query, XQueryCompiler xqc, String baseUri) {
+    public static long timeQuerySaxon(String query, XQueryCompiler xqc) {
         long startTime = System.currentTimeMillis();
         if (xqc == null) {
-            xqc = getSaxon(baseUri);
+            xqc = getSaxon();
         }
         List<XdmItem> items = new ArrayList<>();
         XdmDestination destination = new XdmDestination();

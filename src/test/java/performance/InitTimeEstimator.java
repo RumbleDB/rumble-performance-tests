@@ -9,7 +9,6 @@ public class InitTimeEstimator {
     public static void main(String[] args) {
         String query = args[0];
         String runtimeConfig = args[1];
-        String baseUri = args[2];
 
         long timeDifference;
         if (RuntimeConfig.lookup(runtimeConfig).useRumble) {
@@ -18,9 +17,9 @@ public class InitTimeEstimator {
             long time2 = Helper.timeQueryRumble(query, rumble, null);
             timeDifference = time1 - time2;
         } else {
-            XQueryCompiler xqc = Helper.getSaxon(baseUri);
-            long time1 = Helper.timeQuerySaxon(query, xqc, null);
-            long time2 = Helper.timeQuerySaxon(query, xqc, null);
+            XQueryCompiler xqc = Helper.getSaxon();
+            long time1 = Helper.timeQuerySaxon(query, xqc);
+            long time2 = Helper.timeQuerySaxon(query, xqc);
             timeDifference = time1 - time2;
         }
         System.out.println("Result:" + timeDifference);

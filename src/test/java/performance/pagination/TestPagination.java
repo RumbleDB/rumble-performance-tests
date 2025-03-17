@@ -8,17 +8,17 @@ public class TestPagination extends TestBase {
 
     @Test
     public void testMaster2() {
-        runTest(PaginationTestCases.allTestCases, "final_master", "paginationfinal", false);
+        runTest(PaginationTestCases.allTestCases, "final_master", false);
     }
 
     @Test
     public void testMaster1() {
-        runTest(PaginationTestCases.allTestCases, "new_master", "paginationnew", false);
+        runTest(PaginationTestCases.allTestCases, "new_master", false);
     }
 
     @Test
     public void testOldMaster() {
-        runTest(PaginationTestCases.allTestCases, "old_master", "paginationold", false);
+        runTest(PaginationTestCases.allTestCases, "old_master", false);
     }
 
 }

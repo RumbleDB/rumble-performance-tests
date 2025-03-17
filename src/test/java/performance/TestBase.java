@@ -4,13 +4,12 @@ package performance;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-    public void runTest(List<TestCase> testCases, String configName, String testName, boolean measureInit) {
-        String outputName = java.time.LocalDateTime.now() + "_" + testName;
+    public void runTest(List<TestCase> testCases, String configName, boolean measureInit) {
+        String outputName = java.time.LocalDateTime.now() + "_" + configName;
         for (int rep = 1; rep <= Config.reps; rep++) {
             for (TestCase test : testCases) {
                 long estimatedInitTime = measureInit ? testInitTime(test.queries.get(0), configName) : -1;
@@ -30,8 +29,7 @@ public class TestBase {
                                 String.valueOf(rep),
                                 String.valueOf(queryIndex),
                                 String.valueOf(estimatedInitTime),
-                                outputName,
-                                Paths.get("").toUri().toString()
+                                outputName
                         );
                         processBuilder.inheritIO();
                         Process process = processBuilder.start();
@@ -60,8 +58,7 @@ public class TestBase {
                     System.getProperty("java.class.path"),
                     "performance.InitTimeEstimator",
                     query,
-                    configName,
-                    Paths.get("").toUri().toString()
+                    configName
             );
             processBuilder.redirectErrorStream(true);
             Process process = processBuilder.start();

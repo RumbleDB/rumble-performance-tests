@@ -1,6 +1,5 @@
 package performance;
 
-import net.sf.saxon.s9api.*;
 import org.json.simple.JSONObject;
 
 import java.io.FileWriter;
@@ -19,14 +18,13 @@ public class ExecutionTimer {
         int queryIndex = Integer.parseInt(args[4]);
         long estimatedInitTime = Long.parseLong(args[5]);
         String currTime = args[6];
-        String baseUri = args[7];
         long result;
 
         try {
             if (RuntimeConfig.lookup(runtimeConfig).useRumble) {
                 result = Helper.timeQueryRumble(query, null, runtimeConfig);
             } else {
-                result = Helper.timeQuerySaxon(query, null, baseUri);
+                result = Helper.timeQuerySaxon(query, null);
             }
         } catch (Error e) {
             result = -1;
