@@ -90,13 +90,17 @@ public class StepsTestCases {
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar1024\")/descendant::segment"
             )
     );
-    public static List<TestCase> allRumbleCases = List.of(steps_edgar1r);
+    public static List<TestCase> allRumbleCases = List.of(
+        steps_edgar1r,
+        steps_edgar2r,
+        steps_protocols_1r,
+        steps_protocols_2r
+    );
     public static List<TestCase> allSaxonCases = List.of(
-        steps_edgar2s,
         steps_edgar1s,
+        steps_edgar2s,
         steps_protocols_1s,
         steps_protocols_2s
     );
-    // public static List<TestCase> allRumbleCases = List.of(steps_edgar1r, steps_protocols_1r, steps_protocols_2r);
-    // public static List<TestCase> allSaxonCases = List.of(steps_edgar1s, steps_protocols_1s, steps_protocols_2s);
+    public static List<TestCase> rumbleProtocols1 = List.of(steps_protocols_1r);
 }

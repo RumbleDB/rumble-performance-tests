@@ -18,28 +18,27 @@ public class RuntimeConfig {
 
     static {
         configs.put("saxon", new RuntimeConfig(false, Collections.emptyList()));
-        configs.put("old_master", new RuntimeConfig(true, Collections.emptyList()));
-        configs.put("new_master", new RuntimeConfig(true, Collections.emptyList()));
-        configs.put("final_master", new RuntimeConfig(true, Collections.emptyList()));
         configs.put(
-            "rumble",
+            "opt_instanceof",
             new RuntimeConfig(
                     true,
-                    Collections.emptyList()
-                    // List.of("--optimize-steps", "no", "--optimize-parent-pointers", "no", "--optimize-instanceof",
-                    // "no")
+                    List.of("--optimize-steps", "no", "--optimize-parent-pointers", "no")
             )
         );
         configs.put(
-            "rumble_improved",
+            "opt_instanceof_parent",
             new RuntimeConfig(
                     true,
-                    Collections.emptyList()
+                    List.of("--optimize-steps", "no")
             )
         );
     }
 
     public static RuntimeConfig lookup(String lookup) {
-        return configs.get(lookup);
+        if (configs.containsKey(lookup)) {
+            return configs.get(lookup);
+        } else {
+            return new RuntimeConfig(true, Collections.emptyList());
+        }
     }
 }

@@ -4,7 +4,7 @@ git pull
 mvn clean compile assembly:single
 cd ..
 
-mvn test -Dtest=TestFinalPagination
+mvn test -Dtest=TestPagination#testMaster2
 
 cd rumble/
 git checkout mschoeb-master1
@@ -12,7 +12,7 @@ git pull
 mvn clean compile assembly:single
 cd ..
 
-mvn test -Dtest=TestNewPagination
+mvn test -Dtest=TestPagination#testMaster1
 
 cd rumble/
 git checkout old-master
@@ -20,4 +20,4 @@ git pull
 mvn clean compile assembly:single
 cd ..
 
-mvn test -Dtest=TestOldPagination
+mvn test -Dtest=TestPagination#testOldMaster

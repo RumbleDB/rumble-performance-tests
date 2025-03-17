@@ -25,6 +25,9 @@ git clone http://gitlab.inf.ethz.ch/gfourny/rumble.git
 ```
 6. run script that runs all tests
 ```
+chmod +x ./run_pagination.sh
+chmod +x ./run_steps.sh
+chmod +x ./run_steps_impact.sh
 chmod +x ./run_all_tests.sh
 ./run_all_tests.sh
 ````
