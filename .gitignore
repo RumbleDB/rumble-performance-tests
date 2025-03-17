@@ -4,6 +4,7 @@ target/
 !**/src/test/**/target/
 data/*
 !data/*.sh
+!data/flights.parquet
 
 ### IntelliJ IDEA ###
 .idea/*
