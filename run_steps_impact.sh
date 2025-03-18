@@ -4,7 +4,7 @@ git pull
 mvn clean compile assembly:single
 cd ..
 
-mvn test -Dtest=TestRumbleImprovementImpact#testMaster2
+mvn test -Dtest=TestStepImprovements#testMaster2
 
 cd rumble/
 git checkout mschoeb-master1
@@ -12,4 +12,4 @@ git pull
 mvn clean compile assembly:single
 cd ..
 
-mvn test -Dtest=TestRumbleImprovementImpact#testMaster1
+mvn test -Dtest=TestStepImprovements#testMaster1
