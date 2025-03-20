@@ -1,20 +1,30 @@
-package performance;
+package scaling;
 
+
+import helper.TestCase;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
-    public void runTest(List<TestCase> testCases, String configName, boolean measureInit) {
-        String outputName = java.time.LocalDateTime.now() + "_" + configName;
+public abstract class ScalingTest {
+
+    public abstract String getTestName();
+
+    public abstract boolean getInitTesting();
+
+    public void runTest(List<TestCase> testCases, String configName) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMdd'T'HHmmss");
+        String outputName = getTestName() + "_" + java.time.LocalDateTime.now().format(formatter) + "_" + configName;
         for (int rep = 1; rep <= Config.reps; rep++) {
             for (TestCase test : testCases) {
-                long estimatedInitTime = measureInit ? testInitTime(test.queries.get(0), configName) : -1;
+                boolean measureInit = getInitTesting();
+                long estimatedInitTime = measureInit ? testInitTime(test.getQueries().get(0), configName) : -1;
                 int queryIndex = 0;
-                for (String query : test.queries) {
+                for (String query : test.getQueries()) {
                     queryIndex++;
                     System.out.println("Testing: " + query);
                     try {
@@ -22,8 +32,8 @@ public class TestBase {
                                 "java",
                                 "-cp",
                                 System.getProperty("java.class.path"),
-                                "performance.ExecutionTimer",
-                                test.testName,
+                                "helper.ExecutionTimer",
+                                test.getTestName(),
                                 configName,
                                 query,
                                 String.valueOf(rep),
@@ -56,7 +66,7 @@ public class TestBase {
                     "java",
                     "-cp",
                     System.getProperty("java.class.path"),
-                    "performance.InitTimeEstimator",
+                    "helper.InitTimeEstimator",
                     query,
                     configName
             );

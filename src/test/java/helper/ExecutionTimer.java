@@ -1,6 +1,7 @@
-package performance;
+package helper;
 
 import org.json.simple.JSONObject;
+import scaling.Config;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class ExecutionTimer {
         int rep = Integer.parseInt(args[3]);
         int queryIndex = Integer.parseInt(args[4]);
         long estimatedInitTime = Long.parseLong(args[5]);
-        String currTime = args[6];
+        String outputName = args[6];
         long result;
 
         try {
@@ -41,7 +42,7 @@ public class ExecutionTimer {
 
         try {
             Files.createDirectories(Paths.get(Config.outpath));
-            FileWriter file = new FileWriter(Config.outpath + "/" + currTime + ".log", true);
+            FileWriter file = new FileWriter(Config.outpath + "/" + outputName + ".log", true);
             file.write(queryResults.toJSONString() + "\n");
             file.close();
             System.out.println("Wrote result in log");

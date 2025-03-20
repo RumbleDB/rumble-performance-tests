@@ -1,6 +1,6 @@
-package performance.steps;
+package scaling.steps;
 
-import performance.TestCase;
+import helper.TestCase;
 import java.util.List;
 
 public class StepsTestCases {
@@ -55,7 +55,8 @@ public class StepsTestCases {
                 "xml-files(\"./data/edgar16/*.xml\")/xbrl/context/entity/identifier",
                 "xml-files(\"./data/edgar64/*.xml\")/xbrl/context/entity/identifier",
                 "xml-files(\"./data/edgar256/*.xml\")/xbrl/context/entity/identifier",
-                "xml-files(\"./data/edgar1024/*.xml\")/xbrl/context/entity/identifier"
+                "xml-files(\"./data/edgar1024/*.xml\")/xbrl/context/entity/identifier",
+                "xml-files(\"./data/edgar4096/*.xml\")/xbrl/context/entity/identifier"
 
             )
     );
@@ -66,7 +67,8 @@ public class StepsTestCases {
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar16\")/xbrl/context/entity/identifier",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar64\")/xbrl/context/entity/identifier",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar256\")/xbrl/context/entity/identifier",
-                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar1024\")/xbrl/context/entity/identifier"
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar1024\")/xbrl/context/entity/identifier",
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar4096\")/xbrl/context/entity/identifier"
             )
     );
 
@@ -76,8 +78,8 @@ public class StepsTestCases {
                 "xml-files(\"./data/edgar16/*.xml\")/descendant::segment",
                 "xml-files(\"./data/edgar64/*.xml\")/descendant::segment",
                 "xml-files(\"./data/edgar256/*.xml\")/descendant::segment",
-                "xml-files(\"./data/edgar1024/*.xml\")/descendant::segment"
-
+                "xml-files(\"./data/edgar1024/*.xml\")/descendant::segment",
+                "xml-files(\"./data/edgar4096/*.xml\")/descendant::segment"
             )
     );
 
@@ -87,7 +89,19 @@ public class StepsTestCases {
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar16\")/descendant::segment",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar64\")/descendant::segment",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar256\")/descendant::segment",
-                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar1024\")/descendant::segment"
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar1024\")/descendant::segment",
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar4096\")/descendant::segment"
+            )
+    );
+
+    public static TestCase steps_rumble_improvements = new TestCase(
+            "steps_improvements",
+            List.of(
+                "xml-files(\"./data/protocols1k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols2k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols4k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols8k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols16k/*.xml\")/TEI/text/body/p[2]"
             )
     );
     public static List<TestCase> allRumbleCases = List.of(
@@ -102,5 +116,5 @@ public class StepsTestCases {
         steps_protocols_1s,
         steps_protocols_2s
     );
-    public static List<TestCase> rumbleProtocols1 = List.of(steps_protocols_1r);
+    public static List<TestCase> stepImprovementCases = List.of(steps_rumble_improvements);
 }

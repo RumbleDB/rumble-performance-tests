@@ -1,6 +1,6 @@
-package performance.pagination;
+package scaling.pagination;
 
-import performance.TestCase;
+import helper.TestCase;
 
 import java.util.List;
 

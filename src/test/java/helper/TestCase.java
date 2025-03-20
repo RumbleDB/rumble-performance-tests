@@ -1,4 +1,4 @@
-package performance;
+package helper;
 
 import java.util.List;
 
@@ -9,5 +9,13 @@ public class TestCase {
     public TestCase(String testName, List<String> queries) {
         this.testName = testName;
         this.queries = queries;
+    }
+
+    public String getTestName() {
+        return testName;
+    }
+
+    public List<String> getQueries() {
+        return queries;
     }
 }
