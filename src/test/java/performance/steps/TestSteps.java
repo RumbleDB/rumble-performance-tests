@@ -9,7 +9,7 @@ public class TestSteps extends TestBase {
     @Test
     public void testMaster1() {
         runTest(StepsTestCases.allSaxonCases, "saxon", true);
-        // runTest(StepsTestCases.allRumbleCases, "rumble", true);
+        runTest(StepsTestCases.allRumbleCases, "rumble", true);
     }
 
     @Test
