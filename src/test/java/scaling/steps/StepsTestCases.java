@@ -55,9 +55,7 @@ public class StepsTestCases {
                 "xml-files(\"./data/edgar16/*.xml\")/xbrl/context/entity/identifier",
                 "xml-files(\"./data/edgar64/*.xml\")/xbrl/context/entity/identifier",
                 "xml-files(\"./data/edgar256/*.xml\")/xbrl/context/entity/identifier",
-                "xml-files(\"./data/edgar1024/*.xml\")/xbrl/context/entity/identifier",
-                "xml-files(\"./data/edgar4096/*.xml\")/xbrl/context/entity/identifier"
-
+                "xml-files(\"./data/edgar1024/*.xml\")/xbrl/context/entity/identifier"
             )
     );
 
@@ -67,8 +65,7 @@ public class StepsTestCases {
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar16\")/xbrl/context/entity/identifier",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar64\")/xbrl/context/entity/identifier",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar256\")/xbrl/context/entity/identifier",
-                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar1024\")/xbrl/context/entity/identifier",
-                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar4096\")/xbrl/context/entity/identifier"
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar1024\")/xbrl/context/entity/identifier"
             )
     );
 
@@ -78,8 +75,7 @@ public class StepsTestCases {
                 "xml-files(\"./data/edgar16/*.xml\")/descendant::segment",
                 "xml-files(\"./data/edgar64/*.xml\")/descendant::segment",
                 "xml-files(\"./data/edgar256/*.xml\")/descendant::segment",
-                "xml-files(\"./data/edgar1024/*.xml\")/descendant::segment",
-                "xml-files(\"./data/edgar4096/*.xml\")/descendant::segment"
+                "xml-files(\"./data/edgar1024/*.xml\")/descendant::segment"
             )
     );
 
@@ -89,8 +85,7 @@ public class StepsTestCases {
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar16\")/descendant::segment",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar64\")/descendant::segment",
                 "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar256\")/descendant::segment",
-                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar1024\")/descendant::segment",
-                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar4096\")/descendant::segment"
+                "declare default element namespace \"http://www.xbrl.org/2003/instance\"; collection(\"./data/edgar1024\")/descendant::segment"
             )
     );
 

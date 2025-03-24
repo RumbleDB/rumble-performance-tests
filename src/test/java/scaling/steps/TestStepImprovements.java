@@ -10,6 +10,7 @@ public class TestStepImprovements extends ScalingTest {
         runTest(StepsTestCases.stepImprovementCases, "opt_instanceof");
         runTest(StepsTestCases.stepImprovementCases, "opt_instanceof_parent");
         runTest(StepsTestCases.stepImprovementCases, "opt_instanceof_parent_steps");
+        runTest(StepsTestCases.stepImprovementCases, "rumble_experimental");
     }
 
     @Test
