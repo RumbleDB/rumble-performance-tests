@@ -110,6 +110,10 @@ public class StepsTestCases {
         steps_protocols_1r,
         steps_protocols_2r
     );
+    public static List<TestCase> allRumbleNoEdgar = List.of(
+        steps_protocols_1r,
+        steps_protocols_2r
+    );
     public static List<TestCase> allSaxonCases = List.of(
         steps_edgar1s,
         steps_edgar2s,

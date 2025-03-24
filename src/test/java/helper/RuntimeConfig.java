@@ -32,6 +32,13 @@ public class RuntimeConfig {
                     List.of("--optimize-steps", "no")
             )
         );
+        configs.put(
+            "rumble_experimental",
+            new RuntimeConfig(
+                    true,
+                    List.of("--optimize-steps-experimental", "yes")
+            )
+        );
     }
 
     public static RuntimeConfig lookup(String lookup) {
