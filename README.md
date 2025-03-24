@@ -33,4 +33,7 @@ chmod +x ./run_all_tests.sh
 ````
 
 ## Evaluate results
-TODO
+Run python script that plots the results (needs pandas, numpy and matplotlib installed)
+```
+python3 plot.py
+```
